@@ -11,6 +11,14 @@ Black - #000
 
 */
 
+/* REMINDERS
+
+- Check and adjust width between sections.
+
+
+*/
+
+
 /* ----------------- CSS Reset ----------------- */
 
 /* null margins and padding to give good cross-browser baseline */
@@ -27,6 +35,10 @@ border:none;
 
 .outline {
 	display: none;
+}
+
+.clear {
+	clear: both;
 }
 
 body {
@@ -82,7 +94,10 @@ nav a {
 a:link[href="#home"], a:visited[href="#home"] {
 	color:#fff;
 	font-size:16px;
+	display: inline-block;
+	margin-top: 25px;
 }
+
 
 header {
 	background-color: #16192b;
@@ -119,19 +134,42 @@ header img {
 	padding-bottom: 50px;
 }
 
+
+.do .line {
+	border-top: 1px solid #fff;
+	margin-top: 100px;
+	text-align: center;
+}
+
 .do h2 {
-	padding: 25px;
+	background-color: #43746b;
+	margin-top: 0;
+	padding: 0 3.08% 0 3.08%;
+	display: inline-block;
+	position: relative;
+	top:-30px;
 }
 
 .do ul {
 	list-style: none;
-	padding-left: 100px;
-	padding-bottom: 50px;
+	margin: -91px 0 0 0;
+	padding: 75px 0 50px 100px;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.do ul li {
+	padding-left: 1em;
+	padding-right: 100px;
+	text-indent: -1em; /* Moves first line to the left so that bullet hangs */
 }
 
 .do ul li:before {
-	content: '> \0000a0'; /* ?? Is there a better way to use a carrot as a list item symbol */
+	content: '> \0000a0'; 
+
 }
+
 
 .work {
 	background-color: #e1e1e1; /* ?? How do I add margins in between and make the last in row meet the edge of the right padding, so its 50px away from edge? */
@@ -142,33 +180,43 @@ header img {
 	padding-bottom: 25px;
 }
 
+
 .sample {
-	display: inline-block;
+	display:inline-block; 
 	vertical-align:top;
 	width: 300px;
+	min-height: 450px;
+	background-color: #fff;
+	margin-bottom: 50px;
 }
+
+.sample p, .sample h3 {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
 
 .about {
 	background-color: #43746b;
 }
 
-.about .leftLine, .about .rightLine {
-	width: 35%;
-	border-color: #000;
-	position:relative;
+
+.about .line {
+	border-top: 1px solid #000;
+	margin-top: 75px;
+	text-align: center;
 }
 
-.about .leftLine {
-	float:left;
-	top: 75px;
-	left:0;
+.about h2 {
+	background-color: #43746b;
+	margin-top: 0;
+	padding: 0 3.08% 0 3.08%;
+	display: inline-block;
+	position: relative;
+	top:-30px;
 }
 
-.about .rightLine {
-	float:right;
-	top:75px;
-	left:0;
-}
+
 .contact {
 	background-color: #354072;
 	color: #fff;
