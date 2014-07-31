@@ -1,3 +1,11 @@
+/* REMINDERS
+
+- Check and adjust width between sections.
+- Make samples the same height as the tallest on using jQuery
+- Make flexbox work in IE 8; read: http://designkarma.co.uk/blog/using-flexbox-now;
+- Make mobile styles
+
+
 /* ----------------- Color Palette ----------------- */
 
 /*
@@ -11,12 +19,6 @@ Black - #000
 
 */
 
-/* REMINDERS
-
-- Check and adjust width between sections.
-
-
-*/
 
 
 /* ----------------- CSS Reset ----------------- */
@@ -172,8 +174,18 @@ header img {
 
 
 .work {
-	background-color: #e1e1e1; /* ?? How do I add margins in between and make the last in row meet the edge of the right padding, so its 50px away from edge? */
+	background-color: #e1e1e1; 
 }
+
+.work .inner {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+
 
 .work h2 {
 	border-bottom: 1px solid #000;
@@ -183,9 +195,7 @@ header img {
 
 .sample {
 	display:inline-block; 
-	vertical-align:top;
 	width: 300px;
-	min-height: 450px;
 	background-color: #fff;
 	margin-bottom: 50px;
 }
@@ -194,6 +204,7 @@ header img {
 	margin-left: 25px;
 	margin-right: 25px;
 }
+
 
 
 .about {
