@@ -1,9 +1,15 @@
 /* REMINDERS
 
-- Check and adjust width between sections.
-- Make samples the same height as the tallest on using jQuery
-- Make flexbox work in IE 8; read: http://designkarma.co.uk/blog/using-flexbox-now;
+- Test layout in IE 8
 - Make mobile styles
+
+1117px - samples merge together
+1116px - huge gutter in middle of samples
+973px - top picture goes on top of 'do' heading - need to reduce size of headline and subhead
+817px - samples merge together; go down to one per column at 812px
+685px - 'do' heading too wide in comparison with line; make smaller or reduce side padding
+662px - top navigation goes down to two lines
+600px - subhead goes into 'do' section
 
 
 /* ----------------- Color Palette ----------------- */
@@ -39,9 +45,79 @@ border:none;
 	display: none;
 }
 
-.clear {
-	clear: both;
+/* ----------------- Headings ----------------- */
+
+h2 {
+	text-align: center;
+	font-size: 44px;
 }
+
+.do h2, .about h2 {
+	background-color: #43746b;
+	margin-top: 0;
+	padding: 0 3.08% 0 3.08%;
+	display: inline-block;
+	position: relative;
+	top:-30px;
+}
+
+
+.work h2 {
+	border-bottom: 1px solid #000;
+}
+
+
+.work h2, .contact h2 {
+	padding-bottom: 11px;
+	margin-bottom: 55px;
+	margin-top: 32px;
+}
+
+.line {
+	border-top: 1px solid #fff;
+	text-align: center;
+}
+
+.do .line {
+	margin-top: 93px;
+}
+
+.about .line {
+	margin-top: 60px;
+	height: 67px;
+}
+
+.contact h2 {
+	border-bottom: 1px solid #fff;
+}
+
+/* ----------------- Links ----------------- */
+
+nav a, .sample a:link, .sample a:visited {
+	text-decoration: none;
+}
+
+nav a {
+	color: #fff;
+}
+
+a:link[href="#home"], a:visited[href="#home"] {
+	color:#fff;
+	font-size:16px;
+	display: inline-block;
+	margin-top: 25px;
+}
+
+.work a:link, .work a:visited {
+	color: #000;
+}
+
+.social a {
+	margin:0 10px 0 10px;
+}
+
+
+/* ----------------- Font ----------------- */
 
 body {
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
@@ -49,28 +125,44 @@ body {
 	line-height: 1.25;
 }
 
-.block {
-	padding-left: 100px;
-	padding-right: 100px;
+header, .do, .about, .contact {
+	color: #fff;
 }
 
-h2 {
-	text-align: center;
-	font-size: 44px;
-	margin-top: 50px;
+.headline {
+	font-family: 'Vidaloka', serif;
+	font-size: 78px;
+	margin-top: 75px;
 }
+
+.subhead {
+	font-size: 35px;
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+
+
+/* ----------------- Layout ----------------- */
 
 p, li {
 	margin-bottom: 25px;
 }
 
-.do, .work, .about, .contact { /* To include heading margin inside of section; ?? why does heading margin not have background color otherwise? */
+.clear {
+	clear: both;
+}
+
+.block {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.do, .work, .about, .contact { 
 	padding-top: 1px;
-	padding-bottom: 75px;
+	padding-bottom: 46px;
 }
 
 nav {
-	background-color: #354072;
 	padding: 14px 0 14px 0;
 	text-align: center;
 }
@@ -88,74 +180,42 @@ nav li {
 	margin-bottom: 0;
 }
 
-nav a {
-	text-decoration: none;
-	color: #fff;
+nav, .contact {
+	background-color: #354072;
 }
 
-a:link[href="#home"], a:visited[href="#home"] {
-	color:#fff;
-	font-size:16px;
-	display: inline-block;
-	margin-top: 25px;
+.do, .about {
+	background-color: #43746b;
 }
 
+.work {
+	background-color: #e1e1e1;
+}
 
 header {
 	background-color: #16192b;
-	color: #fff;
 	text-align: center;
 	position: relative; /* To allow for positioning of photo */
 	z-index:2;
 	padding-top: 1px;
+	height: 374px;
 }
-
 
 header img {
 	position: relative;
 	z-index: 1;
-	bottom: -100px;
-}
-
-.headline {
-	font-family: 'Vidaloka', serif;
-	font-size: 78px;
-	margin-top: 75px;
-}
-
-.subhead {
-	font-size: 35px;
-	margin-top: 25px;
-	margin-bottom: 0;
+	bottom: -66px;
 }
 
 .do {
-	background-color: #43746b;
-	color: #fff;
 	padding-top: 75px;
-	padding-bottom: 50px;
-}
-
-
-.do .line {
-	border-top: 1px solid #fff;
-	margin-top: 100px;
-	text-align: center;
-}
-
-.do h2 {
-	background-color: #43746b;
-	margin-top: 0;
-	padding: 0 3.08% 0 3.08%;
-	display: inline-block;
-	position: relative;
-	top:-30px;
+	padding-bottom: 46px;
 }
 
 .do ul {
 	list-style: none;
 	margin: -91px 0 0 0;
-	padding: 75px 0 50px 100px;
+	padding: 69px 0 50px 100px;
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
 	border-bottom: 1px solid #fff;
@@ -172,11 +232,6 @@ header img {
 
 }
 
-
-.work {
-	background-color: #e1e1e1; 
-}
-
 .work .inner {
 	display:flex;
 	flex-direction: row;
@@ -184,14 +239,6 @@ header img {
 	justify-content: space-between;
 	align-items: flex-start;
 }
-
-
-
-.work h2 {
-	border-bottom: 1px solid #000;
-	padding-bottom: 25px;
-}
-
 
 .sample {
 	display:inline-block; 
@@ -205,55 +252,8 @@ header img {
 	margin-right: 25px;
 }
 
-
-
-.about {
-	background-color: #43746b;
-}
-
-
-.about .line {
-	border-top: 1px solid #000;
-	margin-top: 75px;
-	text-align: center;
-}
-
-.about h2 {
-	background-color: #43746b;
-	margin-top: 0;
-	padding: 0 3.08% 0 3.08%;
-	display: inline-block;
-	position: relative;
-	top:-30px;
-}
-
-
-.contact {
-	background-color: #354072;
-	color: #fff;
-}
-
-.contact h2 {
-	padding-bottom: 25px;
-	border-bottom: 1px solid #fff;
-}
-
-.callout {
-	background-color: #16192b;
-	padding: 50px 25px 50px 25px;
-	text-align: center;
-	margin:50px 0 50px 0;
-	
-}
-
-.callout p {
-	margin-bottom: 0;
-}
-
 .social {
 	text-align:center;
+	margin-top: 50px;
 }
 
-.social a {
-	margin:0 10px 0 10px;
-}

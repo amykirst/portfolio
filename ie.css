@@ -1,0 +1,13 @@
+.work {
+	text-align: justify;
+}
+
+.sample {
+	text-align: left;
+}
+
+.last:after {
+	content:'';
+	display: inline-block;
+	width: 100%;
+}
