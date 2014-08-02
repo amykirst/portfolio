@@ -21,8 +21,6 @@ TO DO
 
 	1. Look up how to create hamburger menu
 
-	2. Continue mobile styles
-
 */
 
 
@@ -214,7 +212,7 @@ nav, .contact {
 	background-color: #354072;
 }
 
-.do, .about {
+.do {
 	background-color: #43746b;
 }
 
@@ -292,6 +290,11 @@ header img {
 	margin-right: 1.25em; /* 25px */
 }
 
+.about {
+	background: #43746b url(images/cat.png) no-repeat;
+	background-position: right 5em bottom;	
+}
+
 .social {
 	text-align:center;
 	margin-top: 2.5em; /* 50 px */
@@ -345,6 +348,10 @@ header img {
 		padding-left: 0;
 	}
 
+	.do ul li {
+		padding-right: 0;
+	}
+
 }
 
 @media only screen and (max-width: 975px) {
@@ -358,6 +365,10 @@ header img {
 	padding-right: 2.5em; /* 50px */
 	}
 
+	.about {
+		background-position: right 2.5em bottom;	
+	}
+
 }
 
 
@@ -366,6 +377,10 @@ header img {
 	nav li {
 		font-size: .8em; /* 16px */
 		margin-right: 1.25em; /* 20px */
+	}
+
+	h2 {
+		font-size: 2em;
 	}
 }
 
@@ -383,7 +398,7 @@ header img {
 
 }
 
-@media only screen and (max-width: 498px) { 
+@media only screen and (max-width: 507px) { 
 
 	.headline {
 		font-size: 2.5em; /* 50px */
@@ -392,6 +407,11 @@ header img {
 	.subhead {
 		font-size: 1.1em; /* 22px */
 	}
+
+	h2 {
+		font-size: 1.7em;
+	}
+
 }
 
 @media only screen and (max-width: 361px) { 
@@ -399,5 +419,14 @@ header img {
 	.block {
 	padding-left: 1.25em; /* 25px */
 	padding-right: 1.25em; /* 25px */
+	}
+
+	.sample img {
+		width: 250px;
+		height:auto;
+	}
+
+	.sample {
+		width: 250px;
 	}
 }
