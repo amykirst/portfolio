@@ -1,6 +1,8 @@
 $( document ).ready(function() {
   // alert("document is ready!");
-  equalHeight($(".sample"));
+    if ($(".sample").css("width") == "300px") {
+  		equalHeight($(".sample"));
+	}
 });
 
 function equalHeight(block) {

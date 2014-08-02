@@ -1,15 +1,30 @@
-/* REMINDERS
+/* QUESTIONS
 
-- Test layout in IE 8
-- Make mobile styles
 
-1117px - samples merge together
-1116px - huge gutter in middle of samples
-973px - top picture goes on top of 'do' heading - need to reduce size of headline and subhead
-817px - samples merge together; go down to one per column at 812px
-685px - 'do' heading too wide in comparison with line; make smaller or reduce side padding
-662px - top navigation goes down to two lines
-600px - subhead goes into 'do' section
+	1. What if the text was taller than the image? How could I make the image expand? 
+
+	2. When the three samples are side by side, I want them to be the same height - I used jquery for this. However, when the screen
+	is sized smaller by minimzing the browser and the mobile styles go into effect to make them one column, I no longer wnat the jQuery height to be applied. 
+	I can only adjust this by refreshing the page. Is there a way to either make the blocks the same height with CSS or get jQuery to 
+	respond when the window is resized without needing a page refresh? 
+
+
+NOTES
+
+I changed the measurements to ems because the layout is dependent on font size; for instance, if the font sizes in the header change, then the
+height of the header needs to be bigger to maintain proportion. If the font size within the "do" list changes, the box around it needs to grow
+to accommodate it. 
+
+I set the heights to match my Photoshop document, which led to more margins than usual - I measured to the bottom of the font (i.e. border between sections to bottom of next heading). Should I try to be so precise?
+
+TO DO 
+
+	1. Look up how to create hamburger menu
+
+	2. Continue mobile styles
+
+*/
+
 
 
 /* ----------------- Color Palette ----------------- */
@@ -39,28 +54,37 @@ img,fieldset {
 border:none;
 }
 
+* {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+
 /* ----------------- HTML 5 Outline ----------------- */
 
 .outline {
 	display: none;
 }
 
+
 /* ----------------- Headings ----------------- */
 
 h2 {
 	text-align: center;
-	font-size: 44px;
+	font-size: 2.75em; /* 44 px */
+	font-weight: normal;
 }
+
 
 .do h2, .about h2 {
 	background-color: #43746b;
 	margin-top: 0;
-	padding: 0 3.08% 0 3.08%;
+	padding: 0 3.08% 0 3.08%; 
 	display: inline-block;
 	position: relative;
-	top:-30px;
+	top: -.6818em; /* 30px; h2 has a font size of 44px */
 }
-
 
 .work h2 {
 	border-bottom: 1px solid #000;
@@ -68,9 +92,9 @@ h2 {
 
 
 .work h2, .contact h2 {
-	padding-bottom: 11px;
-	margin-bottom: 55px;
-	margin-top: 32px;
+	padding-bottom: .25em; /* 11px */
+	margin-bottom: 1.25em; /* 55px */
+	margin-top: .7272em; /* 32px */
 }
 
 .line {
@@ -79,17 +103,18 @@ h2 {
 }
 
 .do .line {
-	margin-top: 93px;
+	margin-top: 5.8125em; /* 93px */
 }
 
 .about .line {
-	margin-top: 60px;
-	height: 67px;
+	margin-top: 3.75em; /* 60px */
+	height: 4.1875em; /* 67px */
 }
 
 .contact h2 {
 	border-bottom: 1px solid #fff;
 }
+
 
 /* ----------------- Links ----------------- */
 
@@ -103,17 +128,21 @@ nav a {
 
 a:link[href="#home"], a:visited[href="#home"] {
 	color:#fff;
-	font-size:16px;
+	font-size: 1em; /* 16px */
 	display: inline-block;
-	margin-top: 25px;
+	margin-top: 1.5625em; /* 25px */
 }
 
 .work a:link, .work a:visited {
 	color: #000;
 }
 
+.inner a {
+	text-decoration: none;
+}
+
 .social a {
-	margin:0 10px 0 10px;
+	margin:0 .625em 0 .625em; /* 10px */
 }
 
 
@@ -131,13 +160,14 @@ header, .do, .about, .contact {
 
 .headline {
 	font-family: 'Vidaloka', serif;
-	font-size: 78px;
-	margin-top: 75px;
+	font-size: 3.9em; /* 78px */
+	margin-top: .961em; /* 75px */
+	margin-bottom: .320em;
 }
 
 .subhead {
-	font-size: 35px;
-	margin-top: 25px;
+	font-size: 1.75em; /* 35px */
+	margin-top: .714em; /* 25px */
 	margin-bottom: 0;
 }
 
@@ -145,7 +175,7 @@ header, .do, .about, .contact {
 /* ----------------- Layout ----------------- */
 
 p, li {
-	margin-bottom: 25px;
+	margin-bottom: 1.25em; /* 25 px */
 }
 
 .clear {
@@ -153,17 +183,17 @@ p, li {
 }
 
 .block {
-	padding-left: 100px;
-	padding-right: 100px;
+	padding-left: 5em; /* 100px */
+	padding-right: 5em; /* 100px */
 }
 
 .do, .work, .about, .contact { 
-	padding-top: 1px;
-	padding-bottom: 46px;
+	padding-top: .05em; /* 1 px */
+	padding-bottom: 2.3em; /* 46px */
 }
 
 nav {
-	padding: 14px 0 14px 0;
+	padding: .7em 0 .7em 0; /* 14px */
 	text-align: center;
 }
 
@@ -175,8 +205,8 @@ nav ul {
 
 nav li {
 	display:inline-block;
-	margin-right: 50px;
-	font-size: 18px;
+	margin-right: 2.5em; /* 50px */
+	font-size: .9em; /* 18px */
 	margin-bottom: 0;
 }
 
@@ -195,36 +225,37 @@ nav, .contact {
 header {
 	background-color: #16192b;
 	text-align: center;
-	position: relative; /* To allow for positioning of photo */
+	/* Allow for positioning of photo */
+	position: relative; 
 	z-index:2;
 	padding-top: 1px;
-	height: 374px;
 }
 
 header img {
 	position: relative;
 	z-index: 1;
-	bottom: -66px;
+	bottom: -5.3em; /* -106px */
 }
 
 .do {
-	padding-top: 75px;
-	padding-bottom: 46px;
+	padding-top: 3.75em; /* 75px */
+	padding-bottom: 2.3em; /* 46px */
 }
 
 .do ul {
 	list-style: none;
-	margin: -91px 0 0 0;
-	padding: 69px 0 50px 100px;
+	margin: -5.70em 0 0 0; /* -91px */
+	padding: 3.45em 0 2.5em 5em; /* 69px 0 50px 100px */
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
 	border-bottom: 1px solid #fff;
 }
 
 .do ul li {
-	padding-left: 1em;
-	padding-right: 100px;
-	text-indent: -1em; /* Moves first line to the left so that bullet hangs */
+	padding-left: 1em; 
+	padding-right: 5em; /* 100px */
+	/* Move first line to the left so that bullet hangs */
+	text-indent: -1em; 
 }
 
 .do ul li:before {
@@ -232,28 +263,141 @@ header img {
 
 }
 
-.work .inner {
-	display:flex;
+.inner {
+	/*display:flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: flex-start; */
+	text-align: justify;
+}
+
+.inner:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
 }
 
 .sample {
 	display:inline-block; 
-	width: 300px;
+	vertical-align: top;
+	text-align: left;
+	width: 300px; 
 	background-color: #fff;
-	margin-bottom: 50px;
+	margin-bottom: 2.5em; /* 50px */
 }
 
 .sample p, .sample h3 {
-	margin-left: 25px;
-	margin-right: 25px;
+	margin-left: 1.25em; /* 25px */
+	margin-right: 1.25em; /* 25px */
 }
 
 .social {
 	text-align:center;
-	margin-top: 50px;
+	margin-top: 2.5em; /* 50 px */
 }
 
+
+/* ----------------- Mobile Styles ----------------- */
+
+
+@media only screen and (min-width: 801px) and (max-width: 1137px) { 
+
+	.sample {
+		width: 100%;
+		height: 225px;
+	}
+
+	.sample p, .sample h3 {
+		margin-left: 325px;
+	}
+
+	.sample img {
+		float: left;
+	}
+
+	.inner:after {
+    content: none;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+
+	.inner {
+		text-align: center;
+	}
+
+	.line, .do ul {
+		border: none;
+	}
+
+	.do h2, .about h2 {
+		border-bottom: 1px solid #fff;
+		display: block;
+		text-align: center;
+		padding-bottom: .25em; /* 11px */
+		margin-bottom: 1.25em; /* 55px */
+	}
+
+	.do ul {
+		margin-left: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 975px) {
+
+	.line-break {
+		display: block;
+	}
+
+	.block {
+	padding-left: 2.5em; /* 50px */
+	padding-right: 2.5em; /* 50px */
+	}
+
+}
+
+
+@media only screen and (max-width: 761px) { 
+
+	nav li {
+		font-size: .8em; /* 16px */
+		margin-right: 1.25em; /* 20px */
+	}
+}
+
+
+
+@media only screen and (max-width: 589px) { 
+
+	nav  {
+		display:none;
+	}
+
+	.headline {
+		margin-top: 25px; /* 25px */
+	}
+
+}
+
+@media only screen and (max-width: 498px) { 
+
+	.headline {
+		font-size: 2.5em; /* 50px */
+	}
+
+	.subhead {
+		font-size: 1.1em; /* 22px */
+	}
+}
+
+@media only screen and (max-width: 361px) { 
+
+	.block {
+	padding-left: 1.25em; /* 25px */
+	padding-right: 1.25em; /* 25px */
+	}
+}
