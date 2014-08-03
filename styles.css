@@ -8,6 +8,8 @@
 	I can only adjust this by refreshing the page. Is there a way to either make the blocks the same height with CSS or get jQuery to 
 	respond when the window is resized without needing a page refresh? 
 
+	3. At mobile sizes, how can I turn the menu into a dropdown? 
+
 
 NOTES
 
@@ -17,9 +19,6 @@ to accommodate it.
 
 I set the heights to match my Photoshop document, which led to more margins than usual - I measured to the bottom of the font (i.e. border between sections to bottom of next heading). Should I try to be so precise?
 
-TO DO 
-
-	1. Look up how to create hamburger menu
 
 */
 
@@ -40,7 +39,7 @@ Black - #000
 
 
 
-/* ----------------- CSS Reset ----------------- */
+/* --------------------- CSS Reset ----------------- */
 
 /* null margins and padding to give good cross-browser baseline */
 html,body,address,blockquote,div, form,fieldset,caption, hr, table,tr,td,th,p,img {
@@ -58,6 +57,10 @@ border:none;
 	box-sizing: border-box;
 }
 
+p, li {
+	margin-bottom: 1.25em; /* 25 px */
+}
+
 
 /* ----------------- HTML 5 Outline ----------------- */
 
@@ -66,7 +69,7 @@ border:none;
 }
 
 
-/* ----------------- Headings ----------------- */
+/* ----------------------- Headings ----------------- */
 
 h2 {
 	text-align: center;
@@ -120,9 +123,14 @@ nav a, .sample a:link, .sample a:visited {
 	text-decoration: none;
 }
 
+nav a:hover {
+	text-decoration: underline;
+}
+
 nav a {
 	color: #fff;
 }
+
 
 a:link[href="#home"], a:visited[href="#home"] {
 	color:#fff;
@@ -144,50 +152,26 @@ a:link[href="#home"], a:visited[href="#home"] {
 }
 
 
-/* ----------------- Font ----------------- */
+/* ----------------- Other Styles ----------------- */
+
+.clear {
+	clear: both;
+}
 
 body {
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 20px;
 	line-height: 1.25;
+	min-width: 303px;
 }
 
 header, .do, .about, .contact {
 	color: #fff;
 }
 
-.headline {
-	font-family: 'Vidaloka', serif;
-	font-size: 3.9em; /* 78px */
-	margin-top: .961em; /* 75px */
-	margin-bottom: .320em;
-}
-
-.subhead {
-	font-size: 1.75em; /* 35px */
-	margin-top: .714em; /* 25px */
-	margin-bottom: 0;
-}
-
-
-/* ----------------- Layout ----------------- */
-
-p, li {
-	margin-bottom: 1.25em; /* 25 px */
-}
-
-.clear {
-	clear: both;
-}
-
 .block {
 	padding-left: 5em; /* 100px */
 	padding-right: 5em; /* 100px */
-}
-
-.do, .work, .about, .contact { 
-	padding-top: .05em; /* 1 px */
-	padding-bottom: 2.3em; /* 46px */
 }
 
 nav {
@@ -212,14 +196,6 @@ nav, .contact {
 	background-color: #354072;
 }
 
-.do {
-	background-color: #43746b;
-}
-
-.work {
-	background-color: #e1e1e1;
-}
-
 header {
 	background-color: #16192b;
 	text-align: center;
@@ -229,10 +205,33 @@ header {
 	padding-top: 1px;
 }
 
+.headline {
+	font-family: 'Vidaloka', serif;
+	font-size: 3.9em; /* 78px */
+	margin-top: .961em; /* 75px */
+	margin-bottom: .320em;
+}
+
+.subhead {
+	font-size: 1.75em; /* 35px */
+	margin-top: .714em; /* 25px */
+	margin-bottom: 0;
+}
+
 header img {
 	position: relative;
 	z-index: 1;
 	bottom: -5.3em; /* -106px */
+}
+
+.do, .work, .about, .contact { 
+	padding-top: .05em; /* 1 px */
+	padding-bottom: 2.3em; /* 46px */
+}
+
+
+.do {
+	background-color: #43746b;
 }
 
 .do {
@@ -259,6 +258,10 @@ header img {
 .do ul li:before {
 	content: '> \0000a0'; 
 
+}
+
+.work {
+	background-color: #e1e1e1;
 }
 
 .inner {
@@ -388,8 +391,11 @@ header img {
 
 @media only screen and (max-width: 589px) { 
 
-	nav  {
-		display:none;
+	nav li {
+		display:block;
+		margin-right:0;
+		text-align: center;
+		font-size:1em;
 	}
 
 	.headline {
