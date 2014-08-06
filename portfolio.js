@@ -3,6 +3,11 @@ $( document ).ready(function() {
     if ($(".sample").css("width") == "300px") {
   		equalHeight($(".sample"));
 	}
+
+	$('.menu-toggle').click(function (e) {
+      $('.menu').toggleClass('open');
+      e.preventDefault();
+    });
 });
 
 function equalHeight(block) {

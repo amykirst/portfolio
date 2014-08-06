@@ -1,14 +1,11 @@
 /* QUESTIONS
 
 
-	1. What if the text was taller than the image? How could I make the image expand? 
+1. What if the text was taller than the image? How could I make the image expand? 
 
-	2. When the three samples are side by side, I want them to be the same height - I used jquery for this. However, when the screen
-	is sized smaller by minimzing the browser and the mobile styles go into effect to make them one column, I no longer wnat the jQuery height to be applied. 
-	I can only adjust this by refreshing the page. Is there a way to either make the blocks the same height with CSS or get jQuery to 
-	respond when the window is resized without needing a page refresh? 
-
-	3. At mobile sizes, how can I turn the menu into a dropdown? 
+2. When the three samples are side by side, I want them to be the same height - I used jquery for this. However, when the screen
+is sized smaller by minimzing the browser and the mobile styles go into effect to make them one column, I no longer wnat the jQuery height to be applied. I can only adjust this by refreshing the page. Is there a way to either make the blocks the same height with CSS or get jQuery to 
+respond when the window is resized without needing a page refresh? 
 
 
 NOTES
@@ -72,6 +69,7 @@ p, li {
 /* ----------------------- Headings ----------------- */
 
 h2 {
+	font-family: 'Vidaloka', serif;
 	text-align: center;
 	font-size: 2.75em; /* 44 px */
 	font-weight: normal;
@@ -131,6 +129,10 @@ nav a {
 	color: #fff;
 }
 
+.anchor-link {
+	display: none;
+}
+
 
 a:link[href="#home"], a:visited[href="#home"] {
 	color:#fff;
@@ -170,8 +172,8 @@ header, .do, .about, .contact {
 }
 
 .block {
-	padding-left: 5em; /* 100px */
-	padding-right: 5em; /* 100px */
+	padding-left: 8.33%; /* 100px or 5em */
+	padding-right: 8.33%; /* 100px or 5em */
 }
 
 nav {
@@ -295,7 +297,7 @@ header img {
 
 .about {
 	background: #43746b url(images/cat.png) no-repeat;
-	background-position: right 5em bottom;	
+	background-position: 91.67% 100%; /* right 5em bottom */
 }
 
 .social {
@@ -360,7 +362,7 @@ header img {
 @media only screen and (max-width: 975px) {
 
 	.line-break {
-		display: block;
+	display: block;
 	}
 
 	.block {
@@ -377,10 +379,36 @@ header img {
 
 @media only screen and (max-width: 761px) { 
 
-	nav li {
-		font-size: .8em; /* 16px */
-		margin-right: 1.25em; /* 20px */
+	.simple-toggle {
+		display: none;
 	}
+
+	.anchor-link {
+		display: block;
+		padding: .5em 0;
+	}
+
+	ul.open, .open li {
+		display: block;
+	}
+
+	.open li {
+		padding: .5em;
+		margin-right: 0;
+	}
+
+	.open li a {
+		text-decoration: none;
+	}
+
+	.open li:hover {
+		background-color: #43746b;
+	}
+	
+	nav.block {
+		padding: 0;
+	}
+	
 
 	h2 {
 		font-size: 2em;
@@ -390,13 +418,6 @@ header img {
 
 
 @media only screen and (max-width: 589px) { 
-
-	nav li {
-		display:block;
-		margin-right:0;
-		text-align: center;
-		font-size:1em;
-	}
 
 	.headline {
 		margin-top: 25px; /* 25px */
@@ -420,11 +441,11 @@ header img {
 
 }
 
-@media only screen and (max-width: 361px) { 
+@media only screen and (max-width: 477px) { 
 
 	.block {
-	padding-left: 1.25em; /* 25px */
-	padding-right: 1.25em; /* 25px */
+	padding-left: 10%; /* 25px or 1.25em */
+	padding-right: 10%; /* 25px or 1.25em */
 	}
 
 	.sample img {
