@@ -309,7 +309,7 @@ header img {
 /* ----------------- Mobile Styles ----------------- */
 
 
-@media only screen and (min-width: 801px) and (max-width: 1137px) { 
+@media only screen and (min-width: 700px) and (max-width: 1137px) { 
 
 	.sample {
 		width: 100%;
