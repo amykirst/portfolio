@@ -251,10 +251,10 @@ header img {
 }
 
 .do ul li {
-	padding-left: 1em; 
+	padding-left: 16px; /* 1em */ 
 	padding-right: 5em; /* 100px */
 	/* Move first line to the left so that bullet hangs */
-	text-indent: -1em; 
+	text-indent: -20px; /*-1em */
 }
 
 .do ul li:before {
