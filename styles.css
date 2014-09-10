@@ -259,6 +259,7 @@ header img {
 
 .do ul li:before {
 	content: '> \0000a0'; 
+	width: 1em;
 
 }
 
