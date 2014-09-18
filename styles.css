@@ -1,12 +1,4 @@
-/* QUESTIONS
-
-
-1. What if the text was taller than the image? How could I make the image expand? 
-
-2. When the three samples are side by side, I want them to be the same height - I used jquery for this. However, when the screen
-is sized smaller by minimzing the browser and the mobile styles go into effect to make them one column, I no longer wnat the jQuery height to be applied. I can only adjust this by refreshing the page. Is there a way to either make the blocks the same height with CSS or get jQuery to 
-respond when the window is resized without needing a page refresh? 
-
+/* 
 
 NOTES
 
@@ -258,8 +250,9 @@ header img {
 }
 
 .do ul li:before {
-	content: '> \0000a0'; 
+	content: '>'; 
 	width: 1em;
+	margin-right: .5em;
 
 }
 
