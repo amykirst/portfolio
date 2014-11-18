@@ -1,3 +1,5 @@
+applyHeight();
+
 $(document).ready(function() {
   // alert("document is ready!");
   applyHeight();
