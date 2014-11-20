@@ -1,8 +1,7 @@
-applyHeight();
 
 $(document).ready(function() {
   // alert("document is ready!");
-  applyHeight();
+  
   $('.menu-toggle').click(function(e) {
     $('.menu').toggleClass('open');
     e.preventDefault();
@@ -11,6 +10,12 @@ $(document).ready(function() {
     applyHeight();
   });
 }); // End document ready
+
+$(window).load(function() { 
+  applyHeight();
+});
+
+
 
 // size samples to equal heights
 
