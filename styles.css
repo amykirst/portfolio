@@ -1,16 +1,3 @@
-/* 
-
-NOTES
-
-I changed the measurements to ems because the layout is dependent on font size; for instance, if the font sizes in the header change, then the
-height of the header needs to be bigger to maintain proportion. If the font size within the "do" list changes, the box around it needs to grow
-to accommodate it. 
-
-I set the heights to match my Photoshop document, which led to more margins than usual - I measured to the bottom of the font (i.e. border between sections to bottom of next heading). Should I try to be so precise?
-
-
-*/
-
 
 
 /* ----------------- Color Palette ----------------- */
@@ -88,12 +75,9 @@ h2 {
 	margin-top: .7272em; /* 32px */
 }
 
-.line {
-	border-top: 1px solid #fff;
-	text-align: center;
-}
 
 .do .line {
+	text-align: center;
 	margin-top: 5.8125em; /* 93px */
 }
 
@@ -237,9 +221,7 @@ header img {
 	list-style: none;
 	margin: -5.70em 0 0 0; /* -91px */
 	padding: 3.45em 0 2.5em 5em; /* 69px 0 50px 100px */
-	border-left: 1px solid #fff;
-	border-right: 1px solid #fff;
-	border-bottom: 1px solid #fff;
+	border: 1px solid #fff;
 }
 
 .do ul li {
@@ -261,11 +243,6 @@ header img {
 }
 
 .inner {
-	/*display:flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start; */
 	text-align: justify;
 }
 
@@ -275,11 +252,14 @@ header img {
     width: 100%;
 }
 
+.gap, .sample {
+	width: 300px;
+	display: inline-block;
+}
+
 .sample {
-	display:inline-block; 
 	vertical-align: top;
 	text-align: left;
-	width: 300px; 
 	background-color: #fff;
 	margin-bottom: 2.5em; /* 50px */
 }
@@ -288,6 +268,8 @@ header img {
 	margin-left: 1.25em; /* 25px */
 	margin-right: 1.25em; /* 25px */
 }
+
+
 
 .about {
 	background: #43746b url(images/cat.png) no-repeat;
