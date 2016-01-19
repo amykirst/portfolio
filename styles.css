@@ -1,4 +1,4 @@
-
+/* Need to add consistent margin to Back to top link */
 
 /* ----------------- Color Palette ----------------- */
 
@@ -75,6 +75,11 @@ h2 {
 	margin-top: .7272em; /* 32px */
 }
 
+
+.line {
+	border-top: 1px solid #fff;
+	text-align: center;
+}
 
 .do .line {
 	text-align: center;
@@ -254,7 +259,10 @@ header img {
 
 .gap, .sample {
 	width: 300px;
-	display: inline-block;
+}
+
+.gap {
+	display:  none;
 }
 
 .sample {
@@ -262,6 +270,7 @@ header img {
 	text-align: left;
 	background-color: #fff;
 	margin-bottom: 2.5em; /* 50px */
+	display: inline-block;
 }
 
 .sample p, .sample h3 {
@@ -298,6 +307,10 @@ header img {
 
 	.sample img {
 		float: left;
+	}
+
+	.gap {
+		display: inline-block; /* Display gap items only when samples are floated */
 	}
 
 	.inner:after {
