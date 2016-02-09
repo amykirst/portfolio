@@ -37,6 +37,9 @@ p, li {
 	margin-bottom: 1.25em; /* 25 px */
 }
 
+a[href^="tel"]{
+    color:inherit;
+}
 
 /* ----------------- HTML 5 Outline ----------------- */
 
